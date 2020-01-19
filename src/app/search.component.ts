@@ -9,6 +9,6 @@ Component({
 `
 })
 
-export class Search {
+export class SearchComponent {
 
 }

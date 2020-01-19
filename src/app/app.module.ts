@@ -5,16 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { User } from './user/user.component';
 import { Repository } from './repository/repository-component';
-import { Search } from './search.component';
+import { SearchComponent } from './search.component';
 import { UserDetails } from './userdetails';
 
 @NgModule({
   declarations: [
     AppComponent,
     User,
-    Repository,
-    Search,
-    UserDetails
+    Repository
+    // SearchComponent
+    // UserDetails
   ],
   imports: [
     BrowserModule,
