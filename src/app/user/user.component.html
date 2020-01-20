@@ -1,28 +1,24 @@
-<div id="userdetails" class="container-fluid">
-   <div id="profilepic" class="col-md-3">
-      <p></p>
-      <img src="" alt="ProfilePicture"/>
+<div id="userdetails" class="row">
+   <div class="col-md-4">
+      <img src="{{user.avatar_url}}" alt="ProfilePicture"/>
    </div>
-   <div id="profiledetails" >
-      <h2>blckrse9{{user.username}}</h2>
-      <hr/>
-      <p>Here is my bio</p>
+   <div class="col-md-3">
+      <ul class="list-group">
+         <li class="list-group-item"><h2>{{user.name}}</h2>
+         </li>
+         <li class="list-group-item">
+            <p>repos{{user.public_repos}}</p>
+         </li>
+      </ul>
    </div>
+   <hr/>
 </div>
-<div id="repolist" class="container-fluid">
-   <ul>
-      <li><a href="#">SomeRepo</a></li>
-      <li><a href="#">AnotherRepo</a></li>
-      <li><a href="#">AndAnotherRepo</a></li>
+<div class="col-md-4 text-center">
+   <h5 class="card-title text-center">{{user.name}}'s Repositories</h5>
+   <ul class="list-group">
+      <li class="list-group-item">
+         <p> {{user.public_repos}} Repos</p>
+         <a href="{{user.html_url}}" target="_blank" class="list-group-item list-group-item-action active">View Repository</a>
+      </li>
    </ul>
-
-
-  <div class="row">
-    <blockquote class="blockquote text-center">
-      <p class="mb-0">{{quote.quote}}</p>
-      <footer class="blockquote-footer"><cite>{{quote.author}}</cite></footer>
-    </blockquote>
-  </div>
-
-
 </div>
