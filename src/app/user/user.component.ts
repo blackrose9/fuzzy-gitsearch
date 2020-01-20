@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { UserDetails } from '../userdetails';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
+import { HTTPService } from '../http.service';
 
 @Component({
    selector: "app-user",
@@ -10,19 +12,13 @@ import { HttpClient } from '@angular/common/http';
 
 export class User implements OnInit{
    user:UserDetails;
-   accessToken: "62be22095a7dfeb4f83822b1aebcb3110a57c77b";
-   userUrl: "http://api.github.com/users/";
 
-   constructor(private http:HttpClient){}
+   constructor(private httpService:HTTPService, private route:ActivatedRoute){
+      this.httpService = httpService;
+   }
    ngOnInit(){
-      interface APIresponse{
-         username:any[];
-         avatar_url: any[];
-         html_url: any[];
-      }
-      this.http.get<APIresponse>(this.userUrl).subscribe(data=>{
-         this.user = new UserDetails(data.username, data.avatar_url, data.html_url)
-      })
-
+   let username=this.route.snapshot.paramMap.get('username')
+   this.httpService.httpRequest(username)
+   this.user = this.httpService.user
    }
 }

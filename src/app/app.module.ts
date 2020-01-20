@@ -13,8 +13,8 @@ import { HttpClientModule } from '@angular/common/http'
   declarations: [
     AppComponent,
     User,
-    Repository
-    // SearchComponent
+    Repository,
+    SearchComponent
     // UserDetails
   ],
   imports: [

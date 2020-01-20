@@ -1,6 +1,8 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { Router } from '@angular/router';
 
-Component({
+
+@Component({
    selector: "app-search",
    template: `
    <form>
@@ -12,6 +14,12 @@ Component({
 `
 })
 
-export class SearchComponent {
+export class SearchComponent implements OnInit{
+   // goes to the searched for username when button is clicked and goToUrl function is run
+   goToUrl(username){
+      this.router.navigate(['/profile',username])
+    }
 
+   constructor(private router:Router){}
+   ngOnInit(){}
 }
