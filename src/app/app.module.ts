@@ -7,6 +7,7 @@ import { User } from './user/user.component';
 import { Repository } from './repository/repository-component';
 import { SearchComponent } from './search.component';
 import { UserDetails } from './userdetails';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UserDetails } from './userdetails';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

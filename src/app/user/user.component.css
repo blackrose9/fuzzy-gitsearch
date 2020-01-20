@@ -1,0 +1,12 @@
+#userdetails{
+}
+#profilepic{
+   height: 150px;
+   width: 150px;
+   border: 2px solid black;
+   border-radius: 100%;
+   float: left;
+}
+#profiledetails{
+   text-align: left;
+}
