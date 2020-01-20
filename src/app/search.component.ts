@@ -3,8 +3,11 @@ import { Component } from "@angular/core";
 Component({
    selector: "app-search",
    template: `
-   <form class="col-md-1">
-   <input type="text" name="search" id="search" required/>
+   <form>
+   <div class="form-group">
+      <input type="text" name="search" id="search" class="form-control" placeholder="Search for Github Username" required/>
+   </div>
+   <button type="submit" class="btn btn-primary" (click)=goToUrl(username.value)><i class="fa fa-search"></i>Search</button>
    </form>
 `
 })
