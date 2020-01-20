@@ -1,8 +1,12 @@
 export class UserDetails {
-   username:string;
-   profilepic:string;
-   repos:{
+   constructor(
+   public username:string,
+   public profilepic:string,
+   public repos:{
       reponame:string;
       repolink:string;
    }
+   ){}
+   
+   
 }
