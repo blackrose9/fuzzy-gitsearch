@@ -1,9 +1,10 @@
 <div id="userdetails" class="container-fluid">
    <div id="profilepic" class="col-md-3">
+      <p></p>
       <img src="" alt="ProfilePicture"/>
    </div>
    <div id="profiledetails" >
-      <h2>blackrose9</h2>
+      <h2>blckrse9{{user.username}}</h2>
       <hr/>
       <p>Here is my bio</p>
    </div>
@@ -14,4 +15,14 @@
       <li><a href="#">AnotherRepo</a></li>
       <li><a href="#">AndAnotherRepo</a></li>
    </ul>
+
+
+  <div class="row">
+    <blockquote class="blockquote text-center">
+      <p class="mb-0">{{quote.quote}}</p>
+      <footer class="blockquote-footer"><cite>{{quote.author}}</cite></footer>
+    </blockquote>
+  </div>
+
+
 </div>
