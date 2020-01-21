@@ -1,12 +1,25 @@
-#userdetails {
+/* search bar css */
+form{
+   margin-top: 2%;
+}
+form button{
+   margin-top: 0.5%;
 }
 #profilepic{
-   height: 150px;
-   width: 150px;
+   height: 350px;
+   width: 350px;
    border: 2px solid black;
    border-radius: 100%;
    float: left;
 }
-#profiledetails{
+.userdeets{
    text-align: left;
+   margin-top: 2%;
+}
+
+.repos{
+   margin-top: 2%;
+}
+.col-md-9{
+   margin-top: 3%;
 }

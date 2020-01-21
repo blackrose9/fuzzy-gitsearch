@@ -1,34 +1,44 @@
-<form>
+<form class="container-fluid ">
    <div class="form-group">
-      <input type="text" [(ngModel)]="username" name="username" class="form-control" placeholder="Search for Github Username"    required/>
+
+      <input type="text" [(ngModel)]="username" name="username" class="form-control form-control-lg"
+         placeholder="Search for Github Username" required />
+
+      <button type="submit" class="btn btn-primary" (click)="getName()"><i class="fa fa-search"></i>Search</button>
    </div>
-   <button type="submit" class="btn btn-primary" (click)="getName()"><i class="fa fa-search"></i>Search</button>
 </form>
-<div *ngIf="user">
-<div class="row"  *ngIf="user">
-   <div class="col-md-4">
-      <img src="{{user.avatar_url}}" alt="ProfilePicture"  />
+
+<div *ngIf="user" class="container-fluid userdeets">
+   <div class="row" *ngIf="user">
+
+      <div class="col-md-3">
+         <img src="{{user.avatar_url}}" alt="ProfilePicture" id="profilepic" />
+      </div>
+
+      <div class="col-md-9">
+         <ul class="list-group">
+            <li class="list-group-item">
+               <h2>Username: {{user.login}}</h2>
+            </li>
+
+            <li class="list-group-item">
+               <h5>{{user.public_repos}} Repositories</h5>
+            </li>
+         </ul>
+      </div>
+
+      <hr />
    </div>
-   <div class="col-md-3">
+   <div class="repos">
+      <h5 class="card-title">{{user.login}}'s Repositories</h5>
       <ul class="list-group">
-         <li class="list-group-item"><h2>{{user.login}}</h2>
-         </li>
-         <li class="list-group-item">
-            <p>repos{{user.public_repos}}</p>
+         <li class="list-group-item" *ngIf="user">
+            <div *ngFor="let repo of repos">
+               <p *ngIf="user"> {{repo.name}}</p>
+               <a href={{repo.html_url}} target="_blank" class=""> View Repository</a>
+               <hr />
+            </div>
          </li>
       </ul>
    </div>
-   <hr/>
-</div>
-<div class="col-md-4 text-center">
-   <h5 class="card-title text-center">{{user.login}}'s Repositories</h5>
-   <ul class="list-group">
-      <li class="list-group-item"  *ngIf="user">
-         <div *ngFor="let repo of repos">
-         <p *ngIf="user"> {{repo.name}}</p>
-         <a href={{repo.html_url}} target="_blank" class="list-group-item list-group-item-action active" >View Repository</a>
-         </div>
-      </li>
-   </ul>
-</div>
 </div>
