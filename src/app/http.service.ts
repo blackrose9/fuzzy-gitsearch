@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-
+// this is the service class
 export class HTTPService {
   username: string
   clientid = '656c51d0041d740f37dd'
