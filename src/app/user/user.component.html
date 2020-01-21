@@ -34,8 +34,11 @@
       <ul class="list-group">
          <li class="list-group-item" *ngIf="user">
             <div *ngFor="let repo of repos">
+
                <h4 *ngIf="user"> {{repo.name}}</h4>
+
                <a href={{repo.html_url}} target="_blank" class=""> View Repository</a>
+               
                <hr />
             </div>
          </li>
