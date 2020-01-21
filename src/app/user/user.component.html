@@ -30,11 +30,11 @@
       <hr />
    </div>
    <div class="repos">
-      <h5 class="card-title">{{user.login}}'s Repositories</h5>
+      <h3 class="card-title">{{user.login}}'s Repositories</h3>
       <ul class="list-group">
          <li class="list-group-item" *ngIf="user">
             <div *ngFor="let repo of repos">
-               <p *ngIf="user"> {{repo.name}}</p>
+               <h4 *ngIf="user"> {{repo.name}}</h4>
                <a href={{repo.html_url}} target="_blank" class=""> View Repository</a>
                <hr />
             </div>
