@@ -1,10 +1,17 @@
-<div id="userdetails" class="row">
+<form>
+   <div class="form-group">
+      <input type="text" [(ngModel)]="username" name="username" class="form-control" placeholder="Search for Github Username"    required/>
+   </div>
+   <button type="submit" class="btn btn-primary" (click)="getName()"><i class="fa fa-search"></i>Search</button>
+</form>
+<div *ngIf="user">
+<div class="row"  *ngIf="user">
    <div class="col-md-4">
-      <img src="{{user.avatar_url}}" alt="ProfilePicture"/>
+      <img src="{{user.avatar_url}}" alt="ProfilePicture"  />
    </div>
    <div class="col-md-3">
       <ul class="list-group">
-         <li class="list-group-item"><h2>{{user.name}}</h2>
+         <li class="list-group-item"><h2>{{user.login}}</h2>
          </li>
          <li class="list-group-item">
             <p>repos{{user.public_repos}}</p>
@@ -14,11 +21,14 @@
    <hr/>
 </div>
 <div class="col-md-4 text-center">
-   <h5 class="card-title text-center">{{user.name}}'s Repositories</h5>
+   <h5 class="card-title text-center">{{user.login}}'s Repositories</h5>
    <ul class="list-group">
-      <li class="list-group-item">
-         <p> {{user.public_repos}} Repos</p>
-         <a href="{{user.html_url}}" target="_blank" class="list-group-item list-group-item-action active">View Repository</a>
+      <li class="list-group-item"  *ngIf="user">
+         <div *ngFor="let repo of repos">
+         <p *ngIf="user"> {{repo.name}}</p>
+         <a href={{repo.html_url}} target="_blank" class="list-group-item list-group-item-action active" >View Repository</a>
+         </div>
       </li>
    </ul>
+</div>
 </div>

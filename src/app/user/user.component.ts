@@ -11,14 +11,47 @@ import { HTTPService } from '../http.service';
 })
 
 export class User implements OnInit{
-   user:UserDetails;
+   user:any
+   username:string
+   repos:any
 
-   constructor(private httpService:HTTPService, private route:ActivatedRoute){
-      this.httpService = httpService;
+   constructor(private httpService:HTTPService){
+      this.httpService.getProfile().subscribe(res=>{
+         console.log(res)
+         this.user=res
+         
+      })
+
+      this.httpService.getRepo().subscribe(res=>{
+         console.log(res)
+         this.repos=res
+         
+      })
+
    }
+
+   getName(){
+      this.httpService.getUser(this.username)
+      this.httpService.getProfile().subscribe(res=>{
+         console.log(res)
+         this.user=res
+         
+      })
+
+      this.httpService.getRepo().subscribe(res=>{
+         console.log(res)
+         this.repos=res
+         
+      })
+
+
+      
+   }
+
    ngOnInit(){
-   let username=this.route.snapshot.paramMap.get('username')
-   this.httpService.httpRequest(username)
-   this.user = this.httpService.user
-   }
+   // let username=this.route.snapshot.paramMap.get('username')
+   // this.httpService.httpRequest(username)
+   // this.user = this.httpService.user
+   // }
+}
 }
